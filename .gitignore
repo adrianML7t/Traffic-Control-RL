@@ -1,0 +1,19 @@
+# Ignorar archivos compilados de Python
+__pycache__/
+*.pyc
+
+# Ignorar carpetas de entornos virtuales
+venv/
+env/
+.env
+
+# Ignorar archivos generados por SUMO durante el entrenamiento
+*.rou.alt.xml
+*.tripinfo.xml
+resultados_entrenamiento.csv
+resultados_test.csv
+tensorboard_logs/
+models/
+
+# Ignorar configuraciones del sistema
+.DS_Store
