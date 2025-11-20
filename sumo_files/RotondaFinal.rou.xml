@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-11-20T19:51:29.782067+01:00 by Eclipse SUMO netedit 1.25.0
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <!-- Vehicles, persons and containers (sorted by depart) -->
+    <trip id="t_0" depart="0.00" from="e_inN" to="e_outE" via="r_N_W r_W_S r_S_E"/>
+    <trip id="t_1" depart="0.00" from="e_inN" to="e_outS" via="r_N_W r_W_S"/>
+    <trip id="t_10" depart="0.00" from="e_inS" to="e_outW" via="r_S_E r_E_N r_N_W"/>
+    <trip id="t_11" depart="0.00" from="e_inS" to="e_outS" via="r_S_E r_E_N r_N_W r_W_S"/>
+    <trip id="t_12" depart="0.00" from="e_inE" to="e_outN" via="r_E_N"/>
+    <trip id="t_13" depart="0.00" from="e_inE" to="e_outW" via="r_E_N r_N_W"/>
+    <trip id="t_14" depart="0.00" from="e_inE" to="e_outS" via="r_E_N r_N_W r_W_S"/>
+    <trip id="t_15" depart="0.00" from="e_inE" to="e_outE" via="r_E_N r_N_W r_W_S r_S_E"/>
+    <trip id="t_2" depart="0.00" from="e_inN" to="e_outW" via="r_N_W"/>
+    <trip id="t_3" depart="0.00" from="e_inN" to="e_outN" via="r_N_W r_W_S r_S_E r_E_N"/>
+    <trip id="t_4" depart="0.00" from="e_inW" to="e_outS" via="r_W_S"/>
+    <trip id="t_5" depart="0.00" from="e_inW" to="e_outE" via="r_W_S r_S_E"/>
+    <trip id="t_6" depart="0.00" from="e_inW" to="e_outN" via="r_W_S r_S_E r_E_N"/>
+    <trip id="t_7" depart="0.00" from="e_inW" to="e_outW" via="r_W_S r_S_E r_E_N r_N_W"/>
+    <trip id="t_8" depart="0.00" from="e_inS" to="e_outE" via="r_S_E"/>
+    <trip id="t_9" depart="0.00" from="e_inS" to="e_outN" via="r_S_E r_E_N"/>
+</routes>
