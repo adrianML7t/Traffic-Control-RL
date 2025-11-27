@@ -29,5 +29,6 @@ env = sum.parallel_env(
     num_seconds = 3600
 )
 
+observations, infos = env.reset()
 
 
