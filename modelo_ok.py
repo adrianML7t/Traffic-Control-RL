@@ -13,14 +13,14 @@ import sumo_rl
 import supersuit as ss # Necesario para adaptar PettingZoo a StableBaselines
 
 # --- 2. Configuración de Archivos y Variables ---
-NET_FILE = "sumo_files/RotondaFinal.net.xml"
-ROUTE_FILE = "sumo_files/RotondaFinal.rou.xml"
+NET_FILE = "sumo_files/RotondaAmerica.net.xml"
+ROUTE_FILE = "sumo_files/DemandaAmerica.rou.xml"
 MODEL_NAME = "ppo_rotonda_model"
 MODEL_FILE = f"{MODEL_NAME}.zip"
 
 # Cantidad de pasos para entrenar (si no existe el modelo). 
 # 100,000 es un buen comienzo. Para pruebas rápidas usa 5,000.
-TRAIN_TIMESTEPS = 3
+TRAIN_TIMESTEPS = 100000
 
 # ==========================================
 #      LÓGICA PRINCIPAL: SI / SINO
