@@ -3,4 +3,5 @@ stable-baselines3[extra]
 sumo-rl
 shimmy>=2.0.0
 tensorboard
+pettingzoo
 
