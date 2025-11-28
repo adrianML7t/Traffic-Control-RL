@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-11-27T23:32:41.593705+01:00 by Eclipse SUMO netedit 1.25.0
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <!-- Vehicles, persons and containers (sorted by depart) -->
+    <flow id="f_0" begin="0.00" end="3600.00" perHour="250.00" from="42300180#0" to="23725923#3"/>
+    <flow id="f_1" begin="0.00" end="3600.00" perHour="250.00" from="42300180#0" to="759386879#5"/>
+    <flow id="f_10" begin="0.00" end="3600.00" perHour="250.00" from="23777753#0" to="23725923#3"/>
+    <flow id="f_11" begin="0.00" end="3600.00" perHour="250.00" from="23777753#0" to="759386879#5"/>
+    <flow id="f_12" begin="0.00" end="3600.00" perHour="250.00" from="42344525#3" to="23726014#3"/>
+    <flow id="f_13" begin="0.00" end="3600.00" perHour="250.00" from="42344525#3" to="23725923#3"/>
+    <flow id="f_14" begin="0.00" end="3600.00" perHour="250.00" from="42344525#3" to="759386879#5"/>
+    <flow id="f_15" begin="0.00" end="3600.00" perHour="250.00" from="42344525#3" to="23726183#4"/>
+    <flow id="f_2" begin="0.00" end="3600.00" perHour="250.00" from="42300180#0" to="23726183#4"/>
+    <flow id="f_3" begin="0.00" end="3600.00" perHour="250.00" from="42300180#0" to="23726014#3"/>
+    <flow id="f_4" begin="0.00" end="3600.00" perHour="250.00" from="283431730" to="759386879#5"/>
+    <flow id="f_5" begin="0.00" end="3600.00" perHour="250.00" from="283431730" to="23726183#4"/>
+    <flow id="f_6" begin="0.00" end="3600.00" perHour="250.00" from="283431730" to="23726014#3"/>
+    <flow id="f_7" begin="0.00" end="3600.00" perHour="250.00" from="283431730" to="23725923#3"/>
+    <flow id="f_8" begin="0.00" end="3600.00" perHour="250.00" from="23777753#0" to="23726183#4"/>
+    <flow id="f_9" begin="0.00" end="3600.00" perHour="250.00" from="23777753#0" to="23726014#3"/>
+</routes>
