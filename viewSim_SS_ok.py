@@ -12,10 +12,18 @@ tools = os.path.join(os.environ['SUMO_HOME'], 'tools')
 sys.path.append(tools)
 
 # --- Configuración de Archivos y Variables ---
-NET_FILE = "sumo_files/RotondaAmerica.net.xml"
-ROUTE_FILE = "sumo_files/DemandaAmerica.rou.xml"
-MODEL_NAME = "ppo_rotonda_model_mitad"
+NET_FILE = "Traficoreal/RotondaFinal.net.xml"
+ROUTE_FILE = "Traficoreal/DemandaReal.rou.xml"
+MODEL_NAME = "modelo-entrenado"
 MODEL_FILE = f"{MODEL_NAME}.zip"
+
+def reward_fc(ts):
+    # wait_list = ts.get_accumulated_waiting_time_per_lane()
+    # penal_tiempo_espera = -1.5 * sum(wait_list)
+    # penal_presion = -2.0 * ts.get_pressure()
+    penal_colas = -1.0 * ts.get_total_queued()
+    reward = penal_colas
+    return reward
 
 def main():
     if not os.path.exists(MODEL_FILE):
@@ -29,8 +37,21 @@ def main():
     env = sumo_rl.parallel_env(
         net_file=NET_FILE,
         route_file=ROUTE_FILE,
-        use_gui=True,  # Importante: True para ver la simulación
-        num_seconds=3600
+        use_gui=True, # Importante: False para velocidad
+        num_seconds=1000,
+        #out_csv_name="resultsMitadDemanda7/resultados_entrenamiento",
+        
+        #########
+        min_green=60,   # 10 segundos es razonable (200 era excesivo)
+        max_green = 90,
+        enforce_max_green = True,
+        
+        delta_time=10, #Para que tome decisiones frecuentes
+        reward_fn = reward_fc,
+        fixed_ts = True, #respeta lsa Fases del conf SUMO inicial
+        #########
+        
+        add_per_agent_info = True
     )
     
     # Parche para el error de render_mode

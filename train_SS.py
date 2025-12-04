@@ -12,10 +12,18 @@ tools = os.path.join(os.environ['SUMO_HOME'], 'tools')
 sys.path.append(tools)
 
 # --- Configuración de Archivos y Variables ---
-NET_FILE = "sumo_files/RotondaAmerica.net.xml"
-ROUTE_FILE = "sumo_files/DemandaAmerica.rou.xml"
-MODEL_NAME = "ppo_rotonda_model_mitad_10k"
-TRAIN_TIMESTEPS = 10000
+NET_FILE = "Traficoreal/RotondaFinal.net.xml"
+ROUTE_FILE = "Traficoreal/DemandaReal.rou.xml"
+MODEL_NAME = "modelo-entrenado"
+TRAIN_TIMESTEPS = 5000
+
+def reward_fc(ts):
+    # wait_list = ts.get_accumulated_waiting_time_per_lane()
+    # penal_tiempo_espera = -1.5 * sum(wait_list)
+    # penal_presion = -2.0 * ts.get_pressure()
+    penal_colas = -1.0 * ts.get_total_queued()
+    reward = penal_colas
+    return reward
 
 def main():
     print(">>> Iniciando modo ENTRENAMIENTO (Sin GUI)...")
@@ -25,8 +33,20 @@ def main():
         net_file=NET_FILE,
         route_file=ROUTE_FILE,
         use_gui=False, # Importante: False para velocidad
-        num_seconds=3600,
-        out_csv_name="resultsMitadDemanda7/resultados_entrenamiento"
+        num_seconds=1000,
+        out_csv_name="resultsMitadDemanda7/resultados_entrenamiento",
+        
+        #########
+        min_green=60,   # 10 segundos es razonable (200 era excesivo)
+        max_green = 90,
+        enforce_max_green = True,
+        
+        delta_time=10, #Para que tome decisiones frecuentes
+        #reward_fn = reward_fc,
+        fixed_ts = True, # Respeta las fases del conf SUMO inicial
+        #########
+        
+        add_per_agent_info = True
     )
     
     # Parche para el error de render_mode
